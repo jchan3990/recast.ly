@@ -1,8 +1,5 @@
 var VideoListEntry = (props) => (
-  constructor(props) {
-    super(props);
-  }
-  return (
+
   <div className="video-list-entry media">
     <div className="media-left media-middle">
       <img className="media-object" src={props.video.snippet.thumbnails.default.url} alt="" />
@@ -12,7 +9,6 @@ var VideoListEntry = (props) => (
       <div className="video-list-entry-detail">{props.video.snippet.description}</div>
     </div>
   </div>
-  );
 );
 
 //title
@@ -23,7 +19,6 @@ var VideoListEntry = (props) => (
 
 //picture
 //snippet.thumbnails.default.url
-
 // PropTypes tell other developers what `props` a component expects
 // Warnings will be shown in the console when the defined rules are violated
 VideoListEntry.propTypes = {
