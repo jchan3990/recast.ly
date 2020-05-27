@@ -34,6 +34,7 @@ describe('VideoListEntry', function() {
   });
 
   it('should be a stateless functional component', function() {
+    console.log(VideoListEntry, 'entry')
     expect(React.Component.isPrototypeOf(VideoListEntry)).to.be.false;
   });
 

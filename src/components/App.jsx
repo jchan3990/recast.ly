@@ -3,6 +3,7 @@ import VideoPlayer from './VideoPlayer.js';
 import VideoList from './VideoList.js';
 
 var App = (props) => (
+  console.log(props.video, 'video')
   <div>
     <nav className="navbar">
       <div className="col-md-6 offset-md-3">
@@ -14,7 +15,7 @@ var App = (props) => (
         <VideoPlayer />
       </div>
       <div className="col-md-5">
-        <VideoList video={props.videoList} />
+        {/* <VideoList video={props.videoList} /> */}
       </div>
     </div>
   </div>

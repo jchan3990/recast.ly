@@ -8,6 +8,7 @@ describe('VideoList', function() {
   // See more: https://facebook.github.io/react/docs/test-utils.html#shallow-rendering
 
   it('should be a stateless functional component', function() {
+    console.log(VideoList, 'video')
     expect(React.Component.isPrototypeOf(VideoList)).to.be.false;
   });
 
