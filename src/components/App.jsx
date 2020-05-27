@@ -1,25 +1,36 @@
 import Search from './Search.js';
 import VideoPlayer from './VideoPlayer.js';
 import VideoList from './VideoList.js';
+import exampleVideoData from '../data/exampleVideoData.js'
 
 
-
+//setState method to change with videolistentry
+//bind to videolistentry
 class App extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      done: false
+      currentVideo: exampleVideoData[0],
+      videoList: exampleVideoData
     };
+    this.changeState = this.changeState.bind(this)
   }
 
-  onVideoListClick () {
+
+  // Parent = App.
+  // Children = VideoPlayer and VideList
+  // Need to go through parent to have children communicate
+
+  // Change the state to new video
+  changeState(video) {
     this.setState({
-      done: !this.state.done
-    });
+      currentVideo: video
+    })
   }
 
   render() {
+
     return (
       <div>
         <nav className="navbar">
@@ -29,10 +40,10 @@ class App extends React.Component {
         </nav>
         <div className="row">
           <div className="col-md-7">
-            <VideoPlayer video={this.props.videoList[0]}/>
+            <VideoPlayer video={this.state.currentVideo}/>
           </div>
           <div className="col-md-5">
-            <VideoList videos={this.props.videoList} />
+            <VideoList videos={this.state.videoList} changeState={this.changeState}/>
           </div>
         </div>
       </div>

@@ -2,25 +2,15 @@ import VideoListEntry from './VideoListEntry.js'
 
 //insert list of video here
 var VideoList = (props) => {
-  console.log(props, 'props')
   var videos = props.videos;
-  console.log(videos, 'video')
   return (
     <div className="video-list">
-        {videos.map(video =>
-        <VideoListEntry video={video} />
+        {videos.map(video=>
+        <VideoListEntry video={video} changeState={props.changeState}/>
         )}
     </div>
     );
 };
-
-
-// var VideoList = (props) => (
-//   <div className="video-list">
-//     <div><h5><em>{props.video[0]}</em> view goes here</h5></div>
-
-//   </div>
-// );
 
 // PropTypes tell other developers what `props` a component expects
 // Warnings will be shown in the console when the defined rules are violated
