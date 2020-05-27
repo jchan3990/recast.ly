@@ -14,8 +14,7 @@ var App = (props) => (
         <VideoPlayer />
       </div>
       <div className="col-md-5">
-        {/* <div><h5><em>videoList</em></h5></div> */}
-        <VideoList video={props.videoList}/>
+        <VideoList video={props.videoList} />
       </div>
     </div>
   </div>

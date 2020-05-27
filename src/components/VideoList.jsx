@@ -1,9 +1,13 @@
-// import exampleVideoData from 'src/data/exampleVideoData.js'
+import VideoListEntry from './VideoListEntry.js'
 //insert list of video here
 var VideoList = (props) => {
+  var videos = props.video;
+  return (
   <div className="video-list">
     <div><h5><em>{'video list'}</em></h5></div>
+    <VideoListEntry>{videos}</VideoListEntry>
   </div>
+  );
 };
 // var VideoList = (props) => (
 //   <div className="video-list">
@@ -11,7 +15,6 @@ var VideoList = (props) => {
 
 //   </div>
 // );
-
 
 // PropTypes tell other developers what `props` a component expects
 // Warnings will be shown in the console when the defined rules are violated
