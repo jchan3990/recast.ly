@@ -17,7 +17,22 @@ class App extends React.Component {
     this.changeState = this.changeState.bind(this)
   }
 
+  componentDidMount () {
+    this.getYoutubeVideos('honda civics')
+  }
 
+  getYoutubeVideos(query) {
+    var options = {
+      key: this.props.API_KEY,
+      query: query
+    }
+    this.props.searchYouTube(options, (videos) => {
+      this.setState({
+        videoList: videos,
+        currentVideo: videos[0]
+      });
+    });
+  }
   // Parent = App.
   // Children = VideoPlayer and VideList
   // Need to go through parent to have children communicate
@@ -35,7 +50,7 @@ class App extends React.Component {
       <div>
         <nav className="navbar">
           <div className="col-md-6 offset-md-3">
-            <Search />
+            <Search handleSearchInputChange={this.getYoutubeVideos.bind(this)}/>
           </div>
         </nav>
         <div className="row">
